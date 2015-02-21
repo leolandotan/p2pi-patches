@@ -1,0 +1,25 @@
+diff --git a/date_api/date_api.module b/date_api/date_api.module
+old mode 100644
+new mode 100755
+index b1be6e5..3c30a1e
+--- a/date_api/date_api.module
++++ b/date_api/date_api.module
+@@ -518,7 +518,7 @@ class DateObject extends DateTime {
+    */
+   public function limitGranularity($granularity) {
+     foreach ($this->granularity as $key => $val) {
+-      if ($val != 'timezone' && !in_array($val, $granularity)) {
++      if ($val != 'timezone' && is_array($granularity) && !in_array($val, $granularity)) {
+         unset($this->granularity[$key]);
+       }
+     }
+@@ -2157,6 +2157,9 @@ function date_limit_format($format, $granularity) {
+     $drupal_static_fast['formats'] = &drupal_static(__FUNCTION__);
+   }
+   $formats = &$drupal_static_fast['formats'];
++  if (!isset($granularity)) {
++    $granularity = array('year', 'month', 'day', 'hour', 'minute', 'second', 'timezone');
++  }
+   $format_granularity_cid = $format .'|'. implode(',', $granularity);
+   if (isset($formats[$format_granularity_cid])) {
+     return $formats[$format_granularity_cid];
