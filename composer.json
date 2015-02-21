@@ -11,7 +11,7 @@
         "dev-7.x-1.x": {
           "784680ae6aa9b0b4afbdc2b4105feffdbda9e06b": {
             "title": "2332829: Date field loses value and format when translated inside a field collection",
-            "url": "https://www.drupal.org/files/issues/date_granularity-default-value-and-array-check.patch"
+            "url": "patches/date_granularity-default-value-and-array-check.patch"
           }
         }
       }
