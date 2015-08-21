@@ -14,6 +14,14 @@
             "url": "https://www.drupal.org/files/issues/date-ranularity-default-value-and-array-check-2332829-5.patch"
           }
         }
+      },
+      "drupal/drupal": {
+        "7.39": [
+          {
+            "title": "Fix Call to a member function getElementsByTagName() in filter.module error",
+            "url": "https://www.drupal.org/files/issues/core-fix-call-to-member-function-getelementsbytagname-error-2511306-0.patch"
+          }
+        ]
       }
     }
   }
